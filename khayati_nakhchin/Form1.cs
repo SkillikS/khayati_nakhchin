@@ -16,5 +16,27 @@ namespace khayati_nakhchin
         {
             InitializeComponent();
         }
+        
+        private int second = 0;
+        private void timer1_Tick_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            if(second == 10)
+            {
+                Form3 a = new Form3();
+                a.ShowDialog();
+            }
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+          
+
+
+            Form2 aa = new Form2();
+            aa.ShowDialog();
+        }
     }
 }
