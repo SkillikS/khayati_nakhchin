@@ -12,7 +12,7 @@ namespace khayati_nakhchin
 {
     public partial class Form4 : Form
     {
-        int x = 5;
+        
         public Form4()
         {
             InitializeComponent();
@@ -62,6 +62,11 @@ namespace khayati_nakhchin
         private void btnManger_Click(object sender, EventArgs e)
         {
             Form6 aa = new Form6();
+            aa.ShowDialog();
+        }
+      private void btnSearch_Click(object sender, EventArgs e)
+        {
+            FormShow aa = new FormShow();
             aa.ShowDialog();
         }
     }

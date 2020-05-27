@@ -28,20 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgv_show = new System.Windows.Forms.DataGridView();
             this.btn_show = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_show)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgv_show
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 72;
-            this.dataGridView1.RowTemplate.Height = 31;
-            this.dataGridView1.Size = new System.Drawing.Size(776, 205);
-            this.dataGridView1.TabIndex = 0;
+            this.dgv_show.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_show.Location = new System.Drawing.Point(12, 12);
+            this.dgv_show.Name = "dgv_show";
+            this.dgv_show.RowHeadersWidth = 72;
+            this.dgv_show.RowTemplate.Height = 31;
+            this.dgv_show.Size = new System.Drawing.Size(776, 205);
+            this.dgv_show.TabIndex = 0;
+            this.dgv_show.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_show_CellContentClick);
             // 
             // btn_show
             // 
@@ -51,7 +52,7 @@
             this.btn_show.TabIndex = 1;
             this.btn_show.Text = "نمایش";
             this.btn_show.UseVisualStyleBackColor = true;
-            this.btn_show.Click += new System.EventHandler(this.button1_Click);
+            this.btn_show.Click += new System.EventHandler(this.btn_show_Click);
             // 
             // FormShow
             // 
@@ -59,17 +60,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btn_show);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgv_show);
             this.Name = "FormShow";
             this.Text = "FormShow";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_show)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgv_show;
         private System.Windows.Forms.Button btn_show;
     }
 }
