@@ -20,7 +20,7 @@ namespace khayati_nakhchin
  //==========================================btnClear4===========================================
         private void btnclear4_Click(object sender, EventArgs e)
         {
-
+            String test = "this is test for me and iraj and aniran :)";
             btnclear4.BackColor = Color.Transparent;
             //btnminimyze4.FlatStyle = FlatStyle.Flat;
             if (FMessegeBox.FarsiMessegeBox.Show("آیا از خروج اطمینان دارید؟",
@@ -68,6 +68,11 @@ namespace khayati_nakhchin
         {
             FormShow aa = new FormShow();
             aa.ShowDialog();
+        }
+
+        private void btnSearch_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
