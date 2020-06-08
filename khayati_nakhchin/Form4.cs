@@ -44,8 +44,10 @@ namespace khayati_nakhchin
  //==========================================btnBack4===========================================
         private void btnback4_Click(object sender, EventArgs e)
         {
+           
             Form2 aa = new Form2();
             aa.ShowDialog();
+            this.Close();
         }
 //==========================================btnSave4===========================================
         private void btnSave4_Click(object sender, EventArgs e)
@@ -64,10 +66,13 @@ namespace khayati_nakhchin
             Form6 aa = new Form6();
             aa.ShowDialog();
         }
-      private void btnSearch_Click(object sender, EventArgs e)
+
+        private void btnSearch_Click_1(object sender, EventArgs e)
         {
             FormShow aa = new FormShow();
-            aa.ShowDialog();
+            Form9 bb = new Form9();
+         //   aa.ShowDialog();
+            bb.ShowDialog();
         }
     }
 }

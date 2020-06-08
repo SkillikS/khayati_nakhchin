@@ -7,15 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 namespace khayati_nakhchin
 {
     public partial class Form2 : Form
     {
         public Form2()
         {
+
             InitializeComponent();
+            txtPass.PasswordChar = '*';
+            txtPass.MaxLength = 18;
+            textUSER.MaxLength = 25;
         }
+        
  //==========================================btnbtn_X2===========================================
         private void button3_Click(object sender, EventArgs e)
         {
@@ -62,8 +66,10 @@ namespace khayati_nakhchin
             {
                 if(textUSER.Text == "Admin" && txtPass.Text == "Admin")
                 {
+                  
                     Form4 ww = new Form4();
                     ww.ShowDialog();
+                    this.Close();
                 }
                 else
                 {
@@ -107,6 +113,16 @@ namespace khayati_nakhchin
         }
  //==========================================2===========================================
         private void textUSER_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
         {
 
         }

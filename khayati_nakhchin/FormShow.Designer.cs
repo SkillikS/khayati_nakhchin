@@ -63,6 +63,7 @@
             this.Controls.Add(this.dgv_show);
             this.Name = "FormShow";
             this.Text = "FormShow";
+            this.Load += new System.EventHandler(this.FormShow_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_show)).EndInit();
             this.ResumeLayout(false);
 
