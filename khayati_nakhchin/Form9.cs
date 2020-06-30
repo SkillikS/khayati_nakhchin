@@ -13,6 +13,11 @@ namespace khayati_nakhchin
 {
     public partial class Form9 : Form
     {
+        public delegate void delPassData(String id);
+
+
+
+        public string id;
         String connectionString;
         SqlConnection cnn;
         public Form9()
@@ -77,12 +82,55 @@ namespace khayati_nakhchin
                     customersDataGridView.DataSource = dt;
                //     customersDataGridView.Show();
                     customersDataGridView.Visible = true;
+              
                 }
              
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+      
+        private void customersDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+           
+            foreach (DataGridViewRow row in customersDataGridView.SelectedRows)
+            {
+                string id = row.Cells[0].Value.ToString();
+                string name = row.Cells[1].Value.ToString();
+                //...
+                MessageBox.Show("contentclick event calls");
+
+            }
+        }
+        private void customersDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            MessageBox.Show("CEll Double_Click event calls");
+            int rowIndex = e.RowIndex;
+            DataGridViewRow row = customersDataGridView.Rows[rowIndex];
+            String s = row.Cells[1].Value.ToString();
+        }
+        public string _id
+        {
+            get { return id; }
+        }
+
+        private void customersDataGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in customersDataGridView.SelectedRows)
+            {
+                
+                id = row.Cells[0].Value.ToString();
+                string value2 = row.Cells[1].Value.ToString();
+                //...
+
+                MessageBox.Show("selectedchange event calls");
+              //  MessageBox.Show(id);
+
+                FShow frm = new FShow(id);
+                frm.Value = id;
+                frm.ShowDialog();
             }
         }
     }

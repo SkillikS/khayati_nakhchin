@@ -8,17 +8,79 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using System.Data.SqlClient;
+using System.Configuration;
+
 namespace khayati_nakhchin
 {
-    public partial class Form5 : Form
+    public partial class FShow : Form
     {
-        public Form5()
+        public String Value { get; set; }
+
+        String idc = "not set";
+        String connectionString;
+        SqlConnection cnn;
+        public FShow()
         {
             InitializeComponent();
+            connectionString = ConfigurationManager.ConnectionStrings["khayati_nakhchin.Properties.Settings.scn"].ConnectionString;
+            try
+            {
+                String a = "SELECT * FROM Sizing ";
+               String adapt = " WHERE CustomersID = ";
+
+                String adaptor = a + adapt + idc ;
+                MessageBox.Show(adaptor);
+                MessageBox.Show(idc);
+
+                using (cnn = new SqlConnection(connectionString))
+                using (SqlDataAdapter adapter = new SqlDataAdapter(adaptor, cnn))
+                {
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+                    dgv.DataSource = dt;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public FShow(String idcv)
+        {
+            InitializeComponent();
+
+            this.Value = idcv;
+
+
+            connectionString = ConfigurationManager.ConnectionStrings["khayati_nakhchin.Properties.Settings.scn"].ConnectionString;
+            try
+            {
+                String a = "SELECT * FROM Sizing ";
+                String adapt = " WHERE CustomersID = ";
+
+                String adaptor = a + adapt + idcv;
+                MessageBox.Show(adaptor);
+                MessageBox.Show(idcv);
+                using (cnn = new SqlConnection(connectionString))
+                using (SqlDataAdapter adapter = new SqlDataAdapter(adaptor, cnn))
+                {
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+                    dgv.DataSource = dt;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void FShow_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dataSetN.Sizing' table. You can move, or remove it, as needed.
+            idc = Value;
 
         }
 
@@ -27,31 +89,7 @@ namespace khayati_nakhchin
 
         }
 
-        private void btnKhraejshodan5_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void btnClear5_Click(object sender, EventArgs e)
-        {
-
-            btnClear5.BackColor = Color.Transparent;
-            //btnminimyze4.FlatStyle = FlatStyle.Flat;
-            if (FMessegeBox.FarsiMessegeBox.Show("آیا از خروج اطمینان دارید؟",
-                "هشدار !", FMessegeBox.FMessegeBoxButtons.YesNo,
-                FMessegeBox.FMessegeBoxIcons.Question,
-                FMessegeBox.FMessegeBoxDefaultButton.button2) == DialogResult.Yes)
-            {
-                Application.Exit();
-            }
-        }
-
-        private void btnminimyze5_Click(object sender, EventArgs e)
-        {
-
-            btnminimyze5.BackColor = Color.Transparent;
-            btnminimyze5.FlatStyle = FlatStyle.Flat;
-            WindowState = FormWindowState.Minimized;
-        }
+      
 
         private void btnBack5_Click(object sender, EventArgs e)
         {
@@ -183,6 +221,21 @@ namespace khayati_nakhchin
         }
 
         private void buttonSave_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void close_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

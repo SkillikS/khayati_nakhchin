@@ -44,6 +44,7 @@
             // panel9
             // 
             this.panel9.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel9.AutoSize = true;
             this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(8)))), ((int)(((byte)(86)))));
             this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel9.Controls.Add(this.BTN_BACK_9);
@@ -107,13 +108,19 @@
             // 
             // customersDataGridView
             // 
+            this.customersDataGridView.AllowUserToAddRows = false;
+            this.customersDataGridView.AllowUserToDeleteRows = false;
             this.customersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.customersDataGridView.Location = new System.Drawing.Point(20, 537);
             this.customersDataGridView.Name = "customersDataGridView";
+            this.customersDataGridView.ReadOnly = true;
             this.customersDataGridView.RowHeadersWidth = 72;
             this.customersDataGridView.RowTemplate.Height = 31;
             this.customersDataGridView.Size = new System.Drawing.Size(2142, 655);
             this.customersDataGridView.TabIndex = 4;
+            this.customersDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.customersDataGridView_CellContentClick);
+            this.customersDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.customersDataGridView_CellDoubleClick);
+            this.customersDataGridView.SelectionChanged += new System.EventHandler(this.customersDataGridView_SelectionChanged);
             // 
             // dataSet
             // 
@@ -135,8 +142,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(2182, 1204);
-            this.Controls.Add(this.showAll);
             this.Controls.Add(this.customersDataGridView);
+            this.Controls.Add(this.showAll);
             this.Controls.Add(this.panel9);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(6);
@@ -149,6 +156,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.customersDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
