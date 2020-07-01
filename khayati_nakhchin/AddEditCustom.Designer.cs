@@ -36,16 +36,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.csex = new System.Windows.Forms.ComboBox();
+            this.adds = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnedit = new System.Windows.Forms.Button();
             this.txtphone = new System.Windows.Forms.TextBox();
             this.txtfullname = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.btnadd = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnedit = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.adds = new System.Windows.Forms.TextBox();
-            this.csex = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -123,7 +123,6 @@
             this.label1.Size = new System.Drawing.Size(786, 133);
             this.label1.TabIndex = 0;
             this.label1.Text = "ویرایش یا افزودن مشتری";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -160,6 +159,63 @@
             this.panel2.Size = new System.Drawing.Size(1208, 1021);
             this.panel2.TabIndex = 5;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // csex
+            // 
+            this.csex.FormattingEnabled = true;
+            this.csex.Items.AddRange(new object[] {
+            "خانوم",
+            "آقا"});
+            this.csex.Location = new System.Drawing.Point(440, 534);
+            this.csex.Name = "csex";
+            this.csex.Size = new System.Drawing.Size(181, 63);
+            this.csex.TabIndex = 20;
+            // 
+            // adds
+            // 
+            this.adds.Location = new System.Drawing.Point(36, 678);
+            this.adds.Margin = new System.Windows.Forms.Padding(6);
+            this.adds.Name = "adds";
+            this.adds.Size = new System.Drawing.Size(585, 62);
+            this.adds.TabIndex = 19;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("B Nazanin", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(975, 678);
+            this.label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(116, 67);
+            this.label5.TabIndex = 18;
+            this.label5.Text = "آدرس";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("B Nazanin", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(955, 534);
+            this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(147, 67);
+            this.label4.TabIndex = 16;
+            this.label4.Text = "جنیست";
+            // 
+            // btnedit
+            // 
+            this.btnedit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(8)))), ((int)(((byte)(86)))));
+            this.btnedit.Location = new System.Drawing.Point(329, 826);
+            this.btnedit.Margin = new System.Windows.Forms.Padding(6);
+            this.btnedit.Name = "btnedit";
+            this.btnedit.Size = new System.Drawing.Size(205, 96);
+            this.btnedit.TabIndex = 15;
+            this.btnedit.Text = "ویرایش";
+            this.btnedit.UseVisualStyleBackColor = false;
+            this.btnedit.Click += new System.EventHandler(this.btnedit_Click);
             // 
             // txtphone
             // 
@@ -215,63 +271,6 @@
             this.label3.Size = new System.Drawing.Size(202, 67);
             this.label3.TabIndex = 5;
             this.label3.Text = "نام مشتری  ";
-            // 
-            // btnedit
-            // 
-            this.btnedit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(8)))), ((int)(((byte)(86)))));
-            this.btnedit.Location = new System.Drawing.Point(329, 826);
-            this.btnedit.Margin = new System.Windows.Forms.Padding(6);
-            this.btnedit.Name = "btnedit";
-            this.btnedit.Size = new System.Drawing.Size(205, 96);
-            this.btnedit.TabIndex = 15;
-            this.btnedit.Text = "ویرایش";
-            this.btnedit.UseVisualStyleBackColor = false;
-            this.btnedit.Click += new System.EventHandler(this.btnedit_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("B Nazanin", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(955, 534);
-            this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(147, 67);
-            this.label4.TabIndex = 16;
-            this.label4.Text = "جنیست";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("B Nazanin", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(975, 678);
-            this.label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(116, 67);
-            this.label5.TabIndex = 18;
-            this.label5.Text = "آدرس";
-            // 
-            // adds
-            // 
-            this.adds.Location = new System.Drawing.Point(36, 678);
-            this.adds.Margin = new System.Windows.Forms.Padding(6);
-            this.adds.Name = "adds";
-            this.adds.Size = new System.Drawing.Size(585, 62);
-            this.adds.TabIndex = 19;
-            // 
-            // csex
-            // 
-            this.csex.FormattingEnabled = true;
-            this.csex.Items.AddRange(new object[] {
-            "خانوم",
-            "آقا"});
-            this.csex.Location = new System.Drawing.Point(440, 534);
-            this.csex.Name = "csex";
-            this.csex.Size = new System.Drawing.Size(181, 63);
-            this.csex.TabIndex = 20;
             // 
             // AddEditCustom
             // 

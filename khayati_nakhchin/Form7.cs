@@ -54,5 +54,10 @@ namespace khayati_nakhchin
         {
 
         }
+
+        private void bTNLOGIN6_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
