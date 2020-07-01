@@ -20,7 +20,7 @@ namespace khayati_nakhchin
         public AddEditCustom()
         {
             InitializeComponent();
-            csex.Text = "--انتخاب کنید--";
+            csex.Text = "زن";
             connectionString = ConfigurationManager.ConnectionStrings["khayati_nakhchin.Properties.Settings.scn"].ConnectionString;
         }
 

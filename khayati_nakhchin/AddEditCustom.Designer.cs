@@ -164,8 +164,8 @@
             // 
             this.csex.FormattingEnabled = true;
             this.csex.Items.AddRange(new object[] {
-            "خانوم",
-            "آقا"});
+            "زن",
+            "مرد"});
             this.csex.Location = new System.Drawing.Point(440, 534);
             this.csex.Name = "csex";
             this.csex.Size = new System.Drawing.Size(181, 63);

@@ -132,9 +132,9 @@
             // showAll
             // 
             this.showAll.Font = new System.Drawing.Font("B Nazanin", 21.85714F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.showAll.Location = new System.Drawing.Point(1738, 407);
+            this.showAll.Location = new System.Drawing.Point(1459, 407);
             this.showAll.Name = "showAll";
-            this.showAll.Size = new System.Drawing.Size(424, 101);
+            this.showAll.Size = new System.Drawing.Size(703, 101);
             this.showAll.TabIndex = 5;
             this.showAll.Text = "نمایش همه مشتریان";
             this.showAll.UseVisualStyleBackColor = true;
@@ -143,9 +143,9 @@
             // showAll_o
             // 
             this.showAll_o.Font = new System.Drawing.Font("B Nazanin", 21.85714F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.showAll_o.Location = new System.Drawing.Point(1269, 407);
+            this.showAll_o.Location = new System.Drawing.Point(802, 407);
             this.showAll_o.Name = "showAll_o";
-            this.showAll_o.Size = new System.Drawing.Size(440, 101);
+            this.showAll_o.Size = new System.Drawing.Size(651, 101);
             this.showAll_o.TabIndex = 6;
             this.showAll_o.Text = "نمایش همه سفارشات";
             this.showAll_o.UseVisualStyleBackColor = true;
