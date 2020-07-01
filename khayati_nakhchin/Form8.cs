@@ -21,6 +21,7 @@ namespace khayati_nakhchin
         {
             Form4 asa = new Form4();
             asa.ShowDialog();
+            this.Close();
         }
  //==========================================BTN_X8_Click===========================
         private void BTN_X8_Click(object sender, EventArgs e)

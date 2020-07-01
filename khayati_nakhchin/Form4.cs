@@ -58,7 +58,8 @@ namespace khayati_nakhchin
  //==========================================btnCoustomer4===========================================
         private void btnCoustumer4_Click(object sender, EventArgs e)
         {
-
+            AddEditCustom aec = new AddEditCustom();
+            aec.ShowDialog();
         }
 
         private void btnManger_Click(object sender, EventArgs e)
@@ -69,9 +70,8 @@ namespace khayati_nakhchin
 
         private void btnSearch_Click_1(object sender, EventArgs e)
         {
-            FormShow aa = new FormShow();
+         
             Form9 bb = new Form9();
-         //   aa.ShowDialog();
             bb.ShowDialog();
         }
     }

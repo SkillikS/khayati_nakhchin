@@ -137,6 +137,7 @@
             this.txtGHad5.Name = "txtGHad5";
             this.txtGHad5.Size = new System.Drawing.Size(191, 67);
             this.txtGHad5.TabIndex = 37;
+            this.txtGHad5.TextChanged += new System.EventHandler(this.txtGHad5_TextChanged);
             // 
             // txtYagha5
             // 
@@ -410,6 +411,7 @@
             this.txtGHadpantol5.Name = "txtGHadpantol5";
             this.txtGHadpantol5.Size = new System.Drawing.Size(191, 67);
             this.txtGHadpantol5.TabIndex = 46;
+            this.txtGHadpantol5.TextChanged += new System.EventHandler(this.txtGHadpantol5_TextChanged);
             // 
             // txtBasan5
             // 

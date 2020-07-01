@@ -79,6 +79,7 @@ namespace khayati_nakhchin
 
             Form4 aa = new Form4();
             aa.ShowDialog();
+            this.Close();
         }
 //==========================================bTN_LOGIN_6===========================================
 

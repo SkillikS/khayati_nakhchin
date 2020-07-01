@@ -13,6 +13,8 @@ namespace khayati_nakhchin
 {
     public partial class Form9 : Form
     {
+
+        bool flag = false;
         public delegate void delPassData(String id);
 
 
@@ -47,6 +49,7 @@ namespace khayati_nakhchin
         {
             Form4 asa = new Form4();
             asa.ShowDialog();
+            this.Close();
         }
 
         private void btnminimyze9_Click(object sender, EventArgs e)
@@ -78,7 +81,7 @@ namespace khayati_nakhchin
                 {
                     DataTable dt = new DataTable();
                     adapter.Fill(dt);
-
+                  
                     customersDataGridView.DataSource = dt;
                //     customersDataGridView.Show();
                     customersDataGridView.Visible = true;
@@ -118,19 +121,58 @@ namespace khayati_nakhchin
 
         private void customersDataGridView_SelectionChanged(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow row in customersDataGridView.SelectedRows)
+            if (!flag)
             {
-                
-                id = row.Cells[0].Value.ToString();
-                string value2 = row.Cells[1].Value.ToString();
-                //...
+                foreach (DataGridViewRow row in customersDataGridView.SelectedRows)
+                {
 
-                MessageBox.Show("selectedchange event calls");
-              //  MessageBox.Show(id);
+                    id = row.Cells[0].Value.ToString();
+                    string value2 = row.Cells[1].Value.ToString();
 
-                FShow frm = new FShow(id);
-                frm.Value = id;
-                frm.ShowDialog();
+
+                    FShow frm = new FShow(id);
+                    frm.Value = id;
+                    frm.ShowDialog();
+                }
+            }
+            else
+            {
+                foreach (DataGridViewRow row in customersDataGridView.SelectedRows)
+                {
+
+                    id = row.Cells[1].Value.ToString();
+                    string value2 = row.Cells[1].Value.ToString();
+
+
+                    FShow frm = new FShow(id);
+                    frm.Value = id;
+                    frm.ShowDialog();
+                }
+            }
+        }
+
+        private void showAll_o_Click(object sender, EventArgs e)
+        {
+            flag = true;
+            try
+            {
+
+                using (cnn = new SqlConnection(connectionString))
+                using (SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM Orders", cnn))
+                {
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+
+                    customersDataGridView.DataSource = dt;
+                    //     customersDataGridView.Show();
+                    customersDataGridView.Visible = true;
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }

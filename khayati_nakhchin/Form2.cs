@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -11,16 +13,26 @@ namespace khayati_nakhchin
 {
     public partial class Form2 : Form
     {
-        public Form2()
+        String pHash;
+        String uHash;
+        public Form2(String phash,String uhash)
         {
-
+            this.pHash = phash;
+            this.uHash = uhash;
             InitializeComponent();
             txtPass.PasswordChar = '*';
             txtPass.MaxLength = 18;
             textUSER.MaxLength = 25;
         }
-        
- //==========================================btnbtn_X2===========================================
+        public Form2()
+        {
+            InitializeComponent();
+            txtPass.PasswordChar = '*';
+            txtPass.MaxLength = 18;
+            textUSER.MaxLength = 25;
+        }
+
+        //==========================================btnbtn_X2===========================================
         private void button3_Click(object sender, EventArgs e)
         {
             btn_X.BackColor = Color.Transparent;
@@ -64,7 +76,9 @@ namespace khayati_nakhchin
             }
             else
             {
-                if(textUSER.Text == "Admin" && txtPass.Text == "Admin")
+                var uresult = SecurePasswordHasher.Verify(textUSER.Text, uHash);
+                var presult = SecurePasswordHasher.Verify(txtPass.Text, pHash);
+                if (uresult && presult)
                 {
                   
                     Form4 ww = new Form4();
@@ -80,7 +94,11 @@ namespace khayati_nakhchin
  //=====================================================================================
         private void button5_Click(object sender, EventArgs e)
         {
-
+            FMessegeBox.FarsiMessegeBox.Show("نام کاربری و رمز عبور برای بار اول هردو  " + " Admin " + "هستند وبرای ثبت سفارشات خود میتوانید به صفحه ثبت سفارش بروید  ",
+                 "راهنما",
+                FMessegeBox.FMessegeBoxButtons.Ok,
+                FMessegeBox.FMessegeBoxIcons.Information,
+                FMessegeBox.FMessegeBoxDefaultButton.button1);
         }
  //==========================================btnRahnma2===========================================
         private void button6_Click(object sender, EventArgs e)
@@ -97,6 +115,8 @@ namespace khayati_nakhchin
  //==========================================btnPakkardan2===========================================
         private void button4_Click(object sender, EventArgs e)
         {
+         
+           
             if (textUSER.Text != "" && txtPass.Text != "")
             {
                 textUSER.Text = "";
@@ -119,12 +139,7 @@ namespace khayati_nakhchin
 
         private void Form2_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
+        
         }
     }
 }

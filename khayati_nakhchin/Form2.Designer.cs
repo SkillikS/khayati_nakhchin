@@ -215,7 +215,7 @@
             this.label3.TabIndex = 8;
             this.label3.Text = "خیاطی نخچین";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+       
             // 
             // Form2
             // 
